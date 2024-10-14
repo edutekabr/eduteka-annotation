@@ -7,4 +7,6 @@ Lembre-se de rodar os seguintes comandos para testar o projetinho:
 - php artisan migrate (Criar migrations)
 - php artisan db:seed (Popular migrations com as seeders)
 - php artisan serve (Rodar o laravel)
-- criar o .env com os dados de conexão com o banco de dados
+
+- Se necessário criar chave da aplicação: php artisan key:generate
+- Criar arquivo .env
