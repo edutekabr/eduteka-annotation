@@ -1,2 +1,2 @@
 # eduteka-annotation
-Simulando uma serviço de anotações (organização da rotina semanal).
+Simulando um serviço de anotações (organização da rotina semanal).
