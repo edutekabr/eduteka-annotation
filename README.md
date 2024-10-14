@@ -1,2 +1,2 @@
-# eduteka-keep
-Simulando uma aplicação de anotações (rotina semanal).
+# eduteka-annotation
+Simulando uma serviço de anotações (organização da rotina semanal).
