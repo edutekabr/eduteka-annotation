@@ -17,5 +17,13 @@ Route::post('/criar-conta', function () {
 
 
 Route::get('/login', function () {
-    // return view('login');
+    return view('login');
 })->name('login');
+
+Route::post('/login', function () {
+    return 'autenticação do usuário!';
+})->name('auth');
+
+Route::get('/esqueceu-senha', function () {
+    // return view('login');
+})->name('forgot-password');

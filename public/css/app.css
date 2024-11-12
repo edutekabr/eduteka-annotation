@@ -37,21 +37,40 @@ header div.head_left img{
     cursor: pointer;
 }
 
+header div.head_right{
+    display: flex;
+}
+
+header div.head_right a button.btn_login{
+    margin-left: 5px;
+}
+
 button{
     border: 1px solid var(--c-color);
     border-radius: 5px;
-    padding: 15px 20px;
+    padding: 15px 10px;
     background: transparent;
     color: var(--c-color);
     font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
 }
 
 button:hover{
     background: var(--c-color);
     color: var(--a-color);
     opacity: 1;
+}
+
+button svg{
+    margin-left: 10px;
 }
 
 button.btn_login{
@@ -111,16 +130,15 @@ section.home_pg br{
 section.form_pg{
     padding-top: 75px !important;
     display: flex;
-    justify-content: space-between;
-    align-items:flex-start
+    flex-direction: column;
 }
 
 section.form_pg div.form_left{
-    width: 60%;
+    width: 100%;
 }
 
 section.form_pg div.form_right{
-    width: 40%;
+    width: 100%;
     background: var(--b-color);
     border: 1px solid var(--f-color);
     border-radius: 4px;
@@ -185,6 +203,25 @@ div.form_right form span a:hover{
 
     section.home_pg br{
         display: block;
+    }
+
+    section.form_pg{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:flex-start;
+    }
+
+    section.form_pg div.form_left{
+        width: 60%;
+        margin-right: 50px;
+    }
+
+    section.form_pg div.form_right{
+        width: 40%;
+    }
+
+    button{
+        padding: 15px 20px;
     }
 }
 
