@@ -10,9 +10,20 @@
         <div class="form_right">
             <form method="POST" action="{{route('insert-account')}}">
                 @csrf
-                <input type="text" name="name" placeholder="Seu nome" />
-                <input type="email" name="email" placeholder="Seu email" />
-                <input type="password" name="password" placeholder="Sua senha" />
+                <input type="text" name="name" placeholder="Seu nome" value="{{old('name')}}" class="@error('name') field_error @enderror"/>
+                @error('name')
+                    <p>{{ $message }}</p>
+                @enderror
+
+                <input type="text" name="email" placeholder="Seu email" value="{{old('email')}}" />
+                @error('email')
+                    <p>{{ $message }}</p>
+                @enderror
+
+                <input type="password" name="password" placeholder="Sua senha" value="{{old('password')}}" />
+                @error('password')
+                    <p>{{ $message }}</p>
+                @enderror
 
                 <span>Já tem uma conta? <a href="{{route('login')}}">Entrar</a></span>
 
