@@ -10,24 +10,28 @@
         <div class="form_right">
             <form method="POST" action="{{route('insert-account')}}">
                 @csrf
-                <input type="text" name="name" placeholder="Seu nome" value="{{old('name')}}" class="@error('name') field_error @enderror"/>
                 @error('name')
-                    <p>{{ $message }}</p>
+                    <p class="field_error">{{ $message }}</p>
                 @enderror
+                <input type="text" name="name" placeholder="Seu nome" value="{{old('name')}}" class="@error('name') field_error @enderror"/>
 
-                <input type="text" name="email" placeholder="Seu email" value="{{old('email')}}" />
                 @error('email')
-                    <p>{{ $message }}</p>
-                @enderror
+                    <p class="field_error">{{ $message }}</p>
+                 @enderror
+                <input type="text" name="email" placeholder="Seu email" value="{{old('email')}}" class="@error('email') field_error @enderror" />
 
-                <input type="password" name="password" placeholder="Sua senha" value="{{old('password')}}" />
                 @error('password')
-                    <p>{{ $message }}</p>
+                    <p class="field_error">{{ $message }}</p>
                 @enderror
+                <input type="password" name="password" placeholder="Sua senha" value="{{old('password')}}" class="@error('password') field_error @enderror" />
 
                 <span>Já tem uma conta? <a href="{{route('login')}}">Entrar</a></span>
 
                 <x-button class='btn_fullwidth' linkto='insert-account'>Criar nova conta</x-button>
+
+                @if (session('status'))
+                    <span class="txt_success">{{ session('status') }}</span>
+                @endif
             </form>
         </div>
     </section>
