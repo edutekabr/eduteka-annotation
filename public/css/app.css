@@ -189,12 +189,17 @@ div.form_right form span{
     margin-bottom: 30px;
 }
 
-div.form_right form span.txt_success{
+div.form_right form span.txt_success,
+div.form_right form span.txt_error{
     color: var(--c-color);
     font-size: 16px;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 0px;
+}
+
+div.form_right form span.txt_error{
+    color: var(--h-color);
 }
 
 div.form_right form span a{
