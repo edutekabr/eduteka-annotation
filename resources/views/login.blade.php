@@ -10,7 +10,7 @@
         <div class="form_right">
             <form method="POST" action="{{route('auth')}}">
                 @csrf
-                <input type="email" name="email" placeholder="Email" />
+                <input type="text" name="email" placeholder="Email" />
                 <input type="password" name="password" placeholder="Senha" />
 
                 <span><a href="{{route('forgot-password')}}">Esqueceu sua senha?</a></span>
