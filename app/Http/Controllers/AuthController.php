@@ -9,6 +9,10 @@ class AuthController extends Controller
 {
     public function index()
     {
+        if (Auth::user()) {
+            return redirect('dashboard');
+        }
+
         return view('login');
     }
 

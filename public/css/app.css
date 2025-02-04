@@ -46,6 +46,66 @@ header div.head_right a button.btn_login{
     margin-left: 5px;
 }
 
+header div.head_right div.menu_profile{
+    position: relative;
+}
+
+div.menu_profile div.user_picture{
+    background: var(--a-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--f-color);
+    box-shadow: 0px 3px 6px var(--f-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: var(--d-color);
+    cursor: pointer;
+}
+
+header div.head_right div.menu_profile nav{
+    background: var(--b-color);
+    position: absolute;
+    right: 0;
+    top: 51px;
+    width: 175px;
+    border-radius: 5px;
+    border:1px solid var(--f-color);
+    box-shadow: 0px 3px 6px var(--g-color);
+    display: none;
+}
+
+header div.head_right div.menu_profile:hover nav{
+    display: block;
+}
+
+div.head_right nav div.user_infos{
+    padding: 10px 15px;
+    color: var(--e-color);
+    border-bottom: 1px solid var(--g-color);
+}
+
+div.head_right nav ul{
+    list-style-type: none;
+    padding-bottom: 5px;
+}
+
+/* div.head_right nav ul li{
+
+} */
+
+div.head_right nav ul li a{
+    display: block;
+    padding: 10px 15px;
+    color: var(--d-color);
+}
+
+div.head_right nav ul li a:hover{
+    background: var(--a-color);
+}
+
 button{
     border: 1px solid var(--c-color);
     border-radius: 5px;
