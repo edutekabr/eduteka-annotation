@@ -20,7 +20,7 @@
                             <a href="#">Minhas Anotações</a>
                         </li>
                         <li>
-                            <a href="/sair">Sair</a>
+                            <a href="/logout">Sair</a>
                         </li>
                     </ul>
                 </nav>

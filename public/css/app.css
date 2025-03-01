@@ -14,11 +14,13 @@
     --f-color: #333333;
     --g-color: #222222;
     --shadow-color: rgba(51, 51 ,51, .16);
+    --mask-color: rgba(0, 0 ,0, .80);
     --h-color: red;
 }
 
 header,
 section.home_pg,
+section.dash_pg,
 section.form_pg{
     padding: 0px 15px;
 }
@@ -171,6 +173,7 @@ p.subtitle{
 }
 
 section.home_pg,
+section.dash_pg,
 section.form_pg{
     background: linear-gradient(to bottom, var(--a-color), var(--b-color));
     width: 100vw;
@@ -188,8 +191,12 @@ section.home_pg br{
     display: none;
 }
 
-section.form_pg{
+section.form_pg,
+section.dash_pg{
     padding-top: 75px !important;
+}
+
+section.form_pg{
     display: flex;
     flex-direction: column;
 }
@@ -216,7 +223,7 @@ section.form_pg div.form_right form{
     flex-direction: column;
 }
 
-div.form_right form input{
+form input{
     background: var(--g-color);
     border: 1px solid var(--f-color);
     border-radius: 4px;
@@ -226,13 +233,17 @@ div.form_right form input{
     margin-bottom: 20px;
 }
 
-div.form_right form input:focus{
+form input:focus{
     outline: none;
     background: var(--f-color);
 }
 
-div.form_right form input.field_error{
+form input.field_error{
     border: 1px solid var(--h-color);
+}
+
+form input.fullwidth{
+    width: 100%;
 }
 
 p.field_error{
@@ -271,9 +282,52 @@ div.form_right form span a:hover{
     text-decoration: underline;
 }
 
+section.dash_pg div.dash_header{
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.box_modal{
+    width: 100vw;
+    height: 100vh;
+    background: var(--mask-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+div.box_modal div.modal{
+    width: 100vw;
+    height: 100vh;
+    background: var(--b-color);
+}
+
+div.box_modal div.modal div.modal_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--f-color);
+}
+
+div.box_modal div.modal div.modal_header h1{
+    color: var(--c-color);
+    font-size: 24px;
+    font-weight: normal;
+}
+
+div.box_modal div.modal div.modal_header svg{
+    color: var(--c-color);
+}
+
+div.box_modal div.modal div.modal_header,
+div.box_modal div.modal div.modal_content{
+    padding: 25px 15px;
+}
+
 @media (min-width: 900px) {
     header,
     section.home_pg,
+    section.dash_pg,
     section.form_pg{
         padding: 0px 60px;
     }
@@ -308,11 +362,25 @@ div.form_right form span a:hover{
     button{
         padding: 15px 20px;
     }
+
+    div.box_modal{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.box_modal div.modal{
+        width: 550px;
+        height: auto;
+        border: 1px solid var(--f-color);
+        border-radius: 5px;
+    }
 }
 
 @media (min-width: 1200px) {
     header,
     section.home_pg,
+    section.dash_pg,
     section.form_pg{
         padding: 0px 120px;
     }
