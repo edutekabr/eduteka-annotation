@@ -294,12 +294,18 @@ div.box_modal{
     position: absolute;
     left: 0;
     top: 0;
+    display: none;
+}
+
+div.box_modal.opened{
+    display: flex;
 }
 
 div.box_modal div.modal{
     width: 100vw;
     height: 100vh;
     background: var(--b-color);
+    animation: open-modal .3s linear forwards;
 }
 
 div.box_modal div.modal div.modal_header{
@@ -317,11 +323,22 @@ div.box_modal div.modal div.modal_header h1{
 
 div.box_modal div.modal div.modal_header svg{
     color: var(--c-color);
+    cursor: pointer;
 }
 
 div.box_modal div.modal div.modal_header,
 div.box_modal div.modal div.modal_content{
     padding: 25px 15px;
+}
+
+@keyframes open-modal{
+    from {
+        transform: translateY(-100px);
+    }
+
+    to{
+        transform: translateY(0px);
+    }
 }
 
 @media (min-width: 900px) {
@@ -364,7 +381,6 @@ div.box_modal div.modal div.modal_content{
     }
 
     div.box_modal{
-        display: flex;
         justify-content: center;
         align-items: center;
     }

@@ -3,7 +3,7 @@
 @section('content')
     <section class="dash_pg">
         <div class="dash_header">
-            <x-button class='btn_login' linkto='create-account'>
+            <x-button class='btn_login' linkto='#' id="btn-create-annotation">
                 Criar anotação
                 <x-gmdi-edit-note-o />
             </x-button>
@@ -13,7 +13,7 @@
     <x-modal>
         <div class="modal_header">
             <h1>Criar anotação</h1>
-            <x-vaadin-close />
+            <x-vaadin-close id="close-modal" />
         </div>
 
         <div class="modal_content">
@@ -30,3 +30,23 @@
         </div>
     </x-modal>
 @endsection
+
+@push('scripts')
+    <script>
+        const btnCreateAnnotation = document.getElementById('btn-create-annotation')
+        const boxModal = document.getElementById('box-modal')
+        const closeModal = document.getElementById('close-modal')
+
+        btnCreateAnnotation.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            boxModal.classList.add('opened');
+        })
+
+        closeModal.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            boxModal.classList.remove('opened');
+        })
+    </script>
+@endpush
