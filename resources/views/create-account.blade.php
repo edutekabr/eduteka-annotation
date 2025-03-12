@@ -8,7 +8,7 @@
         </div>
 
         <div class="form_right">
-            <form method="POST" action="{{route('insert-account')}}">
+            <form method="POST" action="{{route('store-account')}}">
                 @csrf
                 @error('name')
                     <p class="field_error">{{ $message }}</p>
@@ -27,7 +27,7 @@
 
                 <span>Já tem uma conta? <a href="{{route('login')}}">Entrar</a></span>
 
-                <x-button class='btn_fullwidth' linkto='insert-account'>Criar nova conta</x-button>
+                <x-button class='btn_fullwidth' linkto='store-account'>Criar nova conta</x-button>
 
                 @if (session('status'))
                     <span class="txt_success">{{ session('status') }}</span>

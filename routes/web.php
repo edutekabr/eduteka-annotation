@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,7 +11,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/criar-conta', [UserController::class, 'create'])->name('create-account');
-Route::post('/criar-conta', [UserController::class, 'store'])->name('insert-account');
+Route::post('/criar-conta', [UserController::class, 'store'])->name('store-account');
 
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
@@ -23,6 +24,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/criar-task', [TaskController::class, 'store'])->name('store-task');
 });
 
 

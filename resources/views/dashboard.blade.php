@@ -8,6 +8,10 @@
                 <x-gmdi-edit-note-o />
             </x-button>
         </div>
+
+        @foreach($tasks as $task)
+            <p>{{$task->title}}</p>
+        @endforeach
     </section>
 
     <x-modal>
@@ -17,7 +21,7 @@
         </div>
 
         <div class="modal_content">
-            <form method="POST" action="{{route('insert-account')}}">
+            <form method="POST" action="{{route('store-task')}}">
                 @csrf
 
                 @error('title')
@@ -25,7 +29,7 @@
                 @enderror
                 <input class="fullwidth" type="text" name="title" placeholder="Título" value="{{old('title')}}" class="@error('title') field_error @enderror"/>
 
-                <x-button class='btn_fullwidth' linkto='insert-account'>Criar nova anotação</x-button>
+                <x-button class='btn_fullwidth' linkto='store-task'>Criar nova anotação</x-button>
             </form>
         </div>
     </x-modal>
@@ -39,13 +43,11 @@
 
         btnCreateAnnotation.addEventListener('click', (event) => {
             event.preventDefault();
-
             boxModal.classList.add('opened');
         })
 
         closeModal.addEventListener('click', (event) => {
             event.preventDefault();
-
             boxModal.classList.remove('opened');
         })
     </script>
