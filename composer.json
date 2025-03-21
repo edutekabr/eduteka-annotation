@@ -7,11 +7,14 @@
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-icons": "^1.7",
+        "codeat3/blade-fluentui-system-icons": "^1.34",
         "codeat3/blade-google-material-design-icons": "^1.20",
+        "codeat3/blade-microns": "^1.6",
         "codeat3/blade-simple-line-icons": "^1.4",
         "codeat3/blade-vaadin-icons": "^1.6",
         "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "owenvoke/blade-fontawesome": "^2.9"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
