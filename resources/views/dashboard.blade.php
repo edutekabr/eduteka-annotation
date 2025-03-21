@@ -1,17 +1,25 @@
 @extends('layouts.app')
 
+@push('styles')
+    <link href="{{asset('css/task.css')}}" rel="stylesheet" />
+@endpush
+
 @section('content')
     <section class="dash_pg">
         <div class="dash_header">
+            <h1>Minhas Anotações</h1>
+
             <x-button class='btn_login' linkto='#' id="btn-create-annotation">
                 Criar anotação
                 <x-gmdi-edit-note-o />
             </x-button>
         </div>
 
-        @foreach($tasks as $task)
-            <p>{{$task->title}}</p>
-        @endforeach
+        <div class="box_tasks">
+            @foreach($tasks as $task)
+                <x-task id="{{$task->id}}" title="{{$task->title}}" />
+            @endforeach
+        </div>
     </section>
 
     <x-modal>

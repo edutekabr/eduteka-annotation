@@ -17,7 +17,7 @@
 
                     <ul>
                         <li>
-                            <a href="#">Minhas Anotações</a>
+                            <a href="/dashboard">Minhas Anotações</a>
                         </li>
                         <li>
                             <a href="/logout">Sair</a>

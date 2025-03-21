@@ -1,0 +1,110 @@
+div.task{
+    width: 100%;
+    height: auto;
+    min-height: 320px;
+    background: var(--b-color);
+    border: 1px solid var(--f-color);
+    border-radius: 4px;
+    padding-bottom: 15px;
+    box-shadow: 0px 3px 6px var(--g-color);
+    transition: transform .3s;
+}
+
+div.task:hover{
+    transform: scale(1.02);
+}
+
+div.task div.task_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 15px;
+    border-bottom: 1px solid var(--f-color);
+    box-shadow: 0px 3px 6px var(--g-color);
+}
+
+div.task div.task_header h1{
+    color: var(--d-color);
+    font-size: 24px;
+    font-weight: normal;
+}
+
+div.task div.task_actions svg{
+    color: var(--c-color);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+div.task div.task_actions svg:hover{
+    opacity: .75;
+}
+
+div.task div.task_add,
+div.task div.task_content div.task_item{
+    padding: 12px 15px;
+    color: var(--e-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.task div.task_content div.task_item{
+    border-bottom: 1px solid var(--g-color);
+}
+
+input[type="checkbox"] {
+    accent-color:  var(--c-color);
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--b-color);
+    text-align: center;
+    white-space: pre;
+    content: " ";
+    outline: 2px solid var(--c-color);
+    border-radius: 2px;
+}
+  
+input[type="checkbox"]:checked::before {
+    background: var(--c-color);
+    content: "\2713";
+    color: var(--a-color) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.task div.task_add{
+    background: var(--g-color);
+    border-top: 1px solid var(--f-color);
+    border-bottom: 1px solid var(--f-color);
+    cursor: pointer;
+}
+
+div.task div.task_add:hover{
+    color: var(--c-color);
+    background: var(--b-color);
+}
+
+div.task div.task_content div.task_item span,
+div.task div.task_add span{
+    font-size: 16px;
+}
+
+div.task div.task_add span{
+    margin-left: 10px;
+}
+
+div.task div.task_content div.task_item span{
+    margin: 2.5px 0px 0px 15px;
+}
+
+@media (min-width: 400px) {
+    div.task{
+        width: 375px;
+    }
+}

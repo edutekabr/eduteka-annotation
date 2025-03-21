@@ -8,6 +8,7 @@
 
         <!-- Style CSS -->
         <link href="{{asset('css/app.css')}}" rel="stylesheet" />
+        @stack('styles')
     </head>
     <body>
         @include('components.header')

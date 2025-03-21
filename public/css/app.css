@@ -23,6 +23,7 @@ section.home_pg,
 section.dash_pg,
 section.form_pg{
     padding: 0px 15px;
+    max-width:100%;
 }
 
 header {
@@ -50,6 +51,7 @@ header div.head_right a button.btn_login{
 
 header div.head_right div.menu_profile{
     position: relative;
+    z-index: 99;
 }
 
 div.menu_profile div.user_picture{
@@ -58,7 +60,7 @@ div.menu_profile div.user_picture{
     height: 50px;
     border-radius: 50%;
     border: 1px solid var(--f-color);
-    box-shadow: 0px 3px 6px var(--f-color);
+    box-shadow: 0px 3px 6px var(--g-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,10 +95,6 @@ div.head_right nav ul{
     list-style-type: none;
     padding-bottom: 5px;
 }
-
-/* div.head_right nav ul li{
-
-} */
 
 div.head_right nav ul li a{
     display: block;
@@ -177,7 +175,7 @@ section.dash_pg,
 section.form_pg{
     background: linear-gradient(to bottom, var(--a-color), var(--b-color));
     width: 100vw;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
 }
 
 section.home_pg{
@@ -194,6 +192,7 @@ section.home_pg br{
 section.form_pg,
 section.dash_pg{
     padding-top: 75px !important;
+    padding-bottom: 75px !important;
 }
 
 section.form_pg{
@@ -284,17 +283,27 @@ div.form_right form span a:hover{
 
 section.dash_pg div.dash_header{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+section.dash_pg div.dash_header h1{
+    color: var(--d-color);
+    font-weight: normal;
+    font-size: 20px;
 }
 
 div.box_modal{
     width: 100vw;
     height: 100vh;
+    max-width: 100%;
     background: var(--mask-color);
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     display: none;
+    z-index: 999;
 }
 
 div.box_modal.opened{
@@ -329,6 +338,12 @@ div.box_modal div.modal div.modal_header svg{
 div.box_modal div.modal div.modal_header,
 div.box_modal div.modal div.modal_content{
     padding: 25px 15px;
+}
+
+div.box_tasks{
+    display: grid;
+    justify-content: center;
+    gap: 30px;
 }
 
 @keyframes open-modal{
@@ -391,6 +406,10 @@ div.box_modal div.modal div.modal_content{
         border: 1px solid var(--f-color);
         border-radius: 5px;
     }
+
+    div.box_tasks{
+        grid-template-columns: repeat(2, auto);
+    }
 }
 
 @media (min-width: 1200px) {
@@ -409,3 +428,16 @@ div.box_modal div.modal div.modal_content{
         font-size: 22px;
     }
 }
+
+@media (min-width: 1450px){
+    div.box_tasks{
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media (min-width: 1900px){
+    div.box_tasks{
+        grid-template-columns: repeat(4, auto);
+    }
+}
+

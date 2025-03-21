@@ -10,8 +10,8 @@
         <div class="form_right">
             <form method="POST" action="{{route('auth')}}">
                 @csrf
-                <input type="text" name="email" placeholder="Email" />
-                <input type="password" name="password" placeholder="Senha" />
+                <input type="text" name="email" value="suporte@eduteka.com.br" placeholder="Email" />
+                <input type="password" name="password" value="$eNh4#123" placeholder="Senha" />
 
                 <span><a href="{{route('forgot-password')}}">Esqueceu sua senha?</a></span>
 
