@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    <x-modal>
+    <x-modal id="box-modal">
         <div class="modal_header">
             <h1>Criar anotação</h1>
             <x-vaadin-close id="close-modal" />
@@ -43,14 +43,14 @@
     <script>
         const btnCreateAnnotation = document.getElementById('btn-create-annotation')
         const boxModal = document.getElementById('box-modal')
-        const closeModal = document.getElementById('close-modal')
+        const iconCloseModal = document.getElementById('close-modal')
 
         btnCreateAnnotation.addEventListener('click', (event) => {
             event.preventDefault();
             boxModal.classList.add('opened');
         })
 
-        closeModal.addEventListener('click', (event) => {
+        iconCloseModal.addEventListener('click', (event) => {
             event.preventDefault();
             boxModal.classList.remove('opened');
         })

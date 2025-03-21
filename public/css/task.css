@@ -39,13 +39,20 @@ div.task div.task_actions svg:hover{
     opacity: .75;
 }
 
-div.task div.task_add,
+div.task button.task_add{
+    border: 0;
+    border-radius: 0;
+    text-transform: none;
+}
+
+div.task button.task_add,
 div.task div.task_content div.task_item{
     padding: 12px 15px;
     color: var(--e-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 div.task div.task_content div.task_item{
@@ -78,24 +85,24 @@ input[type="checkbox"]:checked::before {
     align-items: center;
 }
 
-div.task div.task_add{
+div.task button.task_add{
     background: var(--g-color);
     border-top: 1px solid var(--f-color);
     border-bottom: 1px solid var(--f-color);
     cursor: pointer;
 }
 
-div.task div.task_add:hover{
+div.task button.task_add:hover{
     color: var(--c-color);
     background: var(--b-color);
 }
 
 div.task div.task_content div.task_item span,
-div.task div.task_add span{
+div.task button.task_add span{
     font-size: 16px;
 }
 
-div.task div.task_add span{
+div.task button.task_add span{
     margin-left: 10px;
 }
 
