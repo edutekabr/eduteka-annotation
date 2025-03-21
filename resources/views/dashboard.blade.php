@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@push('styles')
-    <link href="{{asset('css/task.css')}}" rel="stylesheet" />
-@endpush
-
 @section('content')
     <section class="dash_pg">
         <div class="dash_header">

@@ -1,3 +1,7 @@
+@pushOnce('styles')
+    <link href="{{asset('css/task.css')}}" rel="stylesheet" />
+@endPushOnce
+
 <div class="task" data-id="{{ $id }}">
     <div class="task_header">
         <h1>{{ $title }}</h1>
