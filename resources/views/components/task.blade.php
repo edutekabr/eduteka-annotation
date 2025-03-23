@@ -2,7 +2,7 @@
     <link href="{{asset('css/task.css')}}" rel="stylesheet" />
 @endPushOnce
 
-<div class="task" data-task-id="{{ $id }}">
+<div class="task" data-id="{{ $id }}">
     <div class="task_header">
         <h1>{{ $title }}</h1>
 
@@ -28,3 +28,52 @@
         <span>Adicionar Item</span>
     </button>
 </div>
+
+<x-modal id="box-modal" taskid="{{ $id }}">
+    <div class="modal_header">
+        <h1>Adicionar item</h1>
+        <x-vaadin-close id="close-modal-task-item" />
+    </div>
+
+    <div class="modal_content">
+        <form method="POST" action="{{route('store-task')}}">
+            @csrf
+
+            @error('content')
+                <p class="field_error">{{ $message }}</p>
+            @enderror
+            <input class="fullwidth" type="text" name="content" placeholder="Item" value="{{old('content')}}" class="@error('content') field_error @enderror"/>
+
+            <input type="hidden" name="task_id" value="{{ $id }}" />
+
+            <x-button class='btn_fullwidth' linkto='store-task'>Criar novo item</x-button>
+        </form>
+    </div>
+</x-modal>
+
+@pushOnce('scripts')
+    <script>
+        const btnsAddItems = document.querySelectorAll('.task_add');
+        const iconsCloseModal = document.querySelectorAll('#close-modal-task-item');
+
+        btnsAddItems.forEach(btnAddIt => {
+            btnAddIt.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const taskId = btnAddIt.parentNode.dataset.id;
+                const modal = document.querySelector(`[data-task-id='${taskId}']`)
+                modal.classList.add('opened');
+
+            })
+        });
+
+        iconsCloseModal.forEach(icCloseMod => {
+            icCloseMod.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const modal = icCloseMod.parentNode.parentNode.parentNode;
+                modal.classList.remove('opened');
+            })
+        });
+    </script>
+@endPushOnce
