@@ -1,5 +1,5 @@
 # eduteka-annotation
-Simulando um serviço de anotações (organização da rotina semanal).
+Simulando um serviço de anotações com Laravel PHP.
 
 
 Lembre-se de rodar os seguintes comandos para testar o projetinho:
