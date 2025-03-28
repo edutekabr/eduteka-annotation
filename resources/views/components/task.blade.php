@@ -29,7 +29,7 @@
     </button>
 </div>
 
-<x-modal id="box-modal" taskid="{{ $id }}">
+<x-modal id="box-modal-task-item" taskid="{{ $id }}">
     <div class="modal_header">
         <h1>Adicionar item</h1>
         <x-vaadin-close id="close-modal-task-item" />
