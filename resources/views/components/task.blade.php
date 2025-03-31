@@ -13,14 +13,7 @@
     </div>
 
     <div class="task_content">
-        <div class="task_item">
-            <input type="checkbox" name="is_marked" value="" />
-            <span>Café da Manhã</span>
-        </div>
-        <div class="task_item">
-            <input type="checkbox" name="is_marked" value="" checked />
-            <span>Trabalhar</span>
-        </div>
+        {{ $slot }}
     </div>
 
     <button class="task_add">
@@ -36,7 +29,7 @@
     </div>
 
     <div class="modal_content">
-        <form method="POST" action="{{route('store-task')}}">
+        <form method="POST" action="{{route('store-task-item')}}">
             @csrf
 
             @error('content')
@@ -45,8 +38,9 @@
             <input class="fullwidth" type="text" name="content" placeholder="Item" value="{{old('content')}}" class="@error('content') field_error @enderror"/>
 
             <input type="hidden" name="task_id" value="{{ $id }}" />
+            <input type="hidden" name="is_marked" value="{{ App\Models\TaskItem::IS_NOT_MARKED }}" />
 
-            <x-button class='btn_fullwidth' linkto='store-task'>Criar novo item</x-button>
+            <x-button class='btn_fullwidth' linkto='store-task-item'>Criar novo item</x-button>
         </form>
     </div>
 </x-modal>
@@ -63,7 +57,6 @@
                 const taskId = btnAddIt.parentNode.dataset.id;
                 const modal = document.querySelector(`[data-task-id='${taskId}']`)
                 modal.classList.add('opened');
-
             })
         });
 

@@ -13,7 +13,16 @@
 
         <div class="box_tasks">
             @foreach($tasks as $task)
-                <x-task id="{{$task->id}}" title="{{$task->title}}" />
+                <x-task id="{{$task->id}}" title="{{$task->title}}">
+                    
+                    @foreach ($task->taskItems as $taskItem)
+                        <div class="task_item">
+                            <input type="checkbox" name="is_marked" value="{{ $taskItem->is_marked }}" />
+                            <span>{{ $taskItem->content }}</span>
+                        </div>
+                    @endforeach
+
+                </x-task>
             @endforeach
         </div>
     </section>
