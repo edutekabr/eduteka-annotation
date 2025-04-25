@@ -1,6 +1,8 @@
 # eduteka-annotation
 Simulando um serviço de anotações com Laravel PHP.
 
+Link da série de vídeos completa: https://youtu.be/8k5Rn2DF_Xw
+
 
 Lembre-se de rodar os seguintes comandos para testar o projetinho:
 - composer install (Instalar bibliotecas de terceiros)
