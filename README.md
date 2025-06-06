@@ -11,5 +11,6 @@ Lembre-se de rodar os seguintes comandos para testar o projetinho:
 
 - Criar arquivo .env (utilizar o env.example como base)
 - Se necessário criar chave da aplicação: php artisan key:generate
+- php artisan optimize (opcionalmente)
 
 Obs: Se vocês adicionarem novos ícones na aplicação, seria necessário limpar e refazer o cache dos ícones. Para limpar o comando é esse: php artisan icons:clear
